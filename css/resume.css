@@ -1,0 +1,134 @@
+:root {
+    --blue-color: #0a18b7;
+    --dark-pink: rgb(151, 38, 171);
+    --light-pink: #b41766;
+    --text-pink: rgb(227, 30, 128);
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.main-header-text {
+    color: transparent !important;
+    background-image: linear-gradient(315deg, var(--blue-color), var(--light-pink)) !important;
+    background-clip: text !important;
+}
+
+.header-title {
+    color: var(--blue-color);
+    font-size: 1.3rem;
+    word-spacing: 1px;
+}
+
+/* Containers */
+.experience-container,
+.education-container,
+.skills-container {
+    width: 45vw;
+    margin: auto;
+}
+
+.experience-container div p:first-of-type {
+    color: var(--blue-color);
+}
+
+.education-container div p:first-of-type,
+.education-container p:first-of-type {
+    color: var(--text-pink);
+}
+
+.info-box {
+    width: 10vw;
+    border-radius: 20px;
+}
+
+.text-box {
+    width: 25vw;
+}
+
+.skill-box {
+    border-radius: 10px;
+    width: 12vw;
+}
+
+.special-container {
+    box-shadow: 0 0px 6px 1px grey;
+    border-radius: 10px;
+}
+
+.skills-outer-container {
+    box-shadow: 0 0px 6px 1px grey;
+    border-radius: 10px;
+}
+
+.box .box-header .icon {
+    color: white !important;
+    background-image: linear-gradient(315deg, var(--blue-color), var(--light-pink)) !important;
+    margin-right: 15px;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+@media (max-width: 992px) {
+
+    .experience-container,
+    .education-container,
+    .skills-container {
+        width: 75vw;
+    }
+
+    .info-box {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .text-box {
+        width: 100%;
+    }
+
+    .skill-box {
+        width: 45%;
+        text-align: center;
+    }
+
+    .special-container {
+        flex-direction: column !important;
+        text-align: center;
+        padding: 1rem !important;
+    }
+
+    .box .box-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .box .box-header .icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .experience-container,
+    .education-container,
+    .skills-container {
+        width: 90vw;
+    }
+
+    .skill-box {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .text-box,
+    .info-box {
+        text-align: center !important;
+    }
+
+    .special-container {
+        padding: 1rem;
+    }
+}
