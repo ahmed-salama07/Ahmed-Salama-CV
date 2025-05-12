@@ -22,59 +22,98 @@ body {
     word-spacing: 1px;
 }
 
-.page-container {
+.page-header h1 {
+    animation-name: movedown;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes movedown {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.nav-item .active {
+    color: transparent !important;
+    background-image: linear-gradient(315deg, var(--blue-color), var(--light-pink)) !important;
+    background-clip: text !important;
+    border-bottom: 1px solid #ddd;
+}
+
+.card {
+    height: 400px !important;
+    width: 300px !important;
+    padding: 0 !important;
+}
+
+.card a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    transition: 0.3s all ease;
+}
+
+.card a img {
+    width: 100% !important;
+    height: 100%;
+    object-fit: cover !important;
+    transition: 0.6s all ease;
+    position: absolute;
+    z-index: 1;
+}
+
+.card a .layer {
     width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-left: auto;
-    margin-right: auto;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    transition: 0.6s all ease;
+    z-index: 2;
+    pointer-events: none;
 }
 
-@media (max-width: 575.98px) {
-    .page-container {
-        max-width: 100%;
+.card .card-img-overlay {
+    z-index: 3;
+    transition: 0.3s all ease;
+    animation-name: translationX;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+}
+
+
+.card a:hover {
+    color: white !important;
+}
+
+
+
+.card a:hover img {
+    transform: rotate(5deg) scale(1.1);
+}
+
+.card a:hover .layer {
+    background-color: rgba(0, 0, 0, 0.65) !important;
+}
+
+@keyframes translationX {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
     }
 }
 
-@media (min-width: 576px) and (max-width: 767.98px) {
-    .page-container {
-        max-width: 540px;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .page-container {
-        max-width: 720px;
-    }
-}
-
-@media (min-width: 992px) and (max-width: 1199.98px) {
-    .page-container {
-        max-width: 960px;
-    }
-}
-
-@media (min-width: 1200px) and (max-width: 1399.98px) {
-    .page-container {
-        max-width: 1140px;
-    }
-}
-
-@media (min-width: 1400px) {
-    .page-container {
-        max-width: 1320px;
-    }
-}
-
-.card-container {
-    width: 40vw;
-}
-
-@media (max-width: 1450px) {
-    .card-container {
-        width: 100%;
-    }
-}
 
 
 .box {
@@ -103,6 +142,11 @@ body {
 .build h1 {
     color: #fff;
     margin-bottom: 1.5rem;
+}
+
+
+.btn-outline-light:hover {
+    background-color: rgb(77, 61, 224);
 }
 
 footer {

@@ -26,7 +26,7 @@ body {
 
 
 .header-title {
-    color: var(--blue-color);
+    color: rgb(29, 47, 242);
     font-size: 1.3rem;
     word-spacing: 1px;
 }
@@ -38,8 +38,25 @@ body {
     font-size: 0.8rem;
 }
 
+.nav-link {
+    color: rgb(120, 120, 120) !important;
+}
+
+.nav-item .active {
+    color: transparent !important;
+    background-image: linear-gradient(315deg, var(--blue-color), var(--light-pink)) !important;
+    background-clip: text !important;
+    border-bottom: 1px solid #ddd;
+}
+
+.btn-primary {
+    background-color: rgb(29, 47, 242) !important;
+}
 
 
+.nav-link:not(.active):hover {
+    color: rgb(94, 86, 78) !important;
+}
 
 .main-header-container {
     height: calc(100vh - 72px);
@@ -75,12 +92,16 @@ body {
 .image-background-colored {
     height: 75vh;
     width: 75vh;
-    background-image: linear-gradient(135deg, var(--blue-color), var(--light-pink));
     border-radius: 5vw;
     max-height: 40rem;
     max-width: 40rem;
     margin-top: 5vh;
     overflow: hidden;
+
+    background: linear-gradient(135deg, var(--blue-color), var(--light-pink));
+
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
 }
 
 .my-pic {
@@ -88,6 +109,148 @@ body {
     left: 50%;
     transform: translateX(-50%);
     height: 45rem;
+    z-index: 2;
+}
+
+.sparkler {
+    position: absolute;
+    opacity: 0.8;
+    animation: twinkle 2s infinite alternate;
+}
+
+
+.sparkle1 {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.sparkle2 {
+    top: 60%;
+    left: 80%;
+    animation-delay: 0.5s;
+}
+
+.sparkle3 {
+    top: 40%;
+    left: 20%;
+    animation-delay: 1s;
+}
+
+.sparkle4 {
+    top: 40%;
+    right: 20%;
+    animation-delay: 1.5s;
+}
+
+.sparkle5 {
+    top: 20%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.sparkle6 {
+    top: 60%;
+    right: 80%;
+    animation-delay: 2.5s;
+}
+
+.sparkle7 {
+    bottom: 20%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+.sparkle8 {
+    bottom: 20%;
+    left: 10%;
+    animation-delay: 3.5s;
+}
+
+.sparkle9 {
+    bottom: 10%;
+    left: 30%;
+    animation-delay: 4s;
+}
+
+.sparkle10 {
+    top: 10%;
+    right: 30%;
+    animation-delay: 4.5s;
+}
+
+
+.profile-icon {
+    position: absolute;
+    color: #fff;
+    opacity: 0.2;
+    font-size: 2rem;
+    pointer-events: none;
+    animation: float 4s infinite alternate ease-in-out;
+}
+
+.icon1 {
+    top: 15%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.icon2 {
+    bottom: 10%;
+    right: 20%;
+    animation-delay: 1s;
+}
+
+.icon3 {
+    top: 40%;
+    left: 85%;
+    animation-delay: 2s;
+}
+
+.icon4 {
+    top: 50%;
+    right: 85%;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-10px) scale(1.2);
+    }
+}
+
+
+@keyframes twinkle {
+    from {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background: linear-gradient(135deg, #2d2da8, #b62d8f);
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background: linear-gradient(315deg, #b62d8f, #2d2da8);
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background: linear-gradient(135deg, #2d2da8, #b62d8f);
+        background-position: 0% 50%;
+    }
 }
 
 @media (max-width: 375px) {
@@ -143,7 +306,7 @@ body {
 
 }
 
-.project-btn:hover a {
+.project-btn:hover {
     color: white !important;
     transition: 0.3s;
 }
