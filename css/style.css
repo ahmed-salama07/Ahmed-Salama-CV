@@ -269,8 +269,6 @@ body {
     .image-background-colored {
         height: 33vh;
         width: 33vh;
-        margin: auto;
-        margin: auto;
     }
 
     .my-pic {
@@ -299,11 +297,9 @@ body {
         width: 40vh;
         margin: auto;
     }
-
     .my-pic {
         height: 30rem;
     }
-
 }
 
 .project-btn:hover {
